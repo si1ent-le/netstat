@@ -49,13 +49,13 @@ netstat -ntu|grep -i ':80' |awk '{print $5}'|cut -d: -f1 -s |cut -f1,2 -d'.'|sed
 ```
 ![](media/15894431509248/15895091620296.jpg)
 
-##**查找较多time_wait连接**
+## 查找较多time_wait连接
 
 ```
 netstat -n|grep "TIME_WAIT"|awk '{print $5}' |sort|uniq -c|sort -rn|head -n20
 ```
 
-## **查找较多的SYN连接**
+## 查找较多的SYN连接
 
 ```
 netstat -an | grep "SYN" | awk '{print $5}'' | awk -F： '{print $1}' | sort | uniq -c | sort -nr | more
